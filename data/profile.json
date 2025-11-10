@@ -1,0 +1,53 @@
+{
+	"name": "Abhishek Nayak",
+	"title": "CEO & Co‑founder, Appsmith",
+	"lede": "Building the leading open‑source platform for internal tools. I care about product velocity, open‑source communities, and pragmatic engineering.",
+	"about": "Abhishek is the CEO & co‑founder of Appsmith, an open‑source framework that helps developers and analysts build internal tools rapidly using prebuilt UI components and a modern workflow. He writes and speaks about open‑source, developer experience, and product execution.",
+	"primaryCta": { "label": "Visit Appsmith", "href": "https://www.appsmith.com" },
+	"secondaryCta": { "label": "Email me", "href": "mailto:hello@abhishek.xyz" },
+	"social": [
+		{ "label": "LinkedIn", "href": "https://www.linkedin.com/in/abhisheknayak/", "icon": "in" },
+		{ "label": "X (Twitter)", "href": "https://twitter.com/search?q=Abhishek%20Nayak%20Appsmith", "icon": "𝕏" },
+		{ "label": "GitHub", "href": "https://github.com/appsmithorg", "icon": "{}" },
+		{ "label": "Appsmith", "href": "https://www.appsmith.com", "icon": "⚡" }
+	],
+	"highlights": [
+		{
+			"eyebrow": "Open Source",
+			"title": "Leading Appsmith",
+			"description": "Building one of the most popular open‑source platforms for internal tools."
+		},
+		{
+			"eyebrow": "Developer Experience",
+			"title": "Accelerating internal tools",
+			"description": "Enabling teams to build dashboards and CRUD apps with UI components, APIs, and databases."
+		},
+		{
+			"eyebrow": "Community",
+			"title": "Global OSS community",
+			"description": "Fostering a vibrant contributor ecosystem across engineering, docs, and templates."
+		},
+		{
+			"eyebrow": "Product",
+			"title": "Execution at speed",
+			"description": "Shipped features that improved time‑to‑value and reliability for thousands of teams."
+		}
+	],
+	"work": [
+		{
+			"name": "Appsmith",
+			"role": "Co‑founder & CEO",
+			"period": "2019 — Present",
+			"summary": "Appsmith is an open‑source framework to build internal tools with prebuilt UI, JS, and data connectors."
+		}
+	],
+	"press": [
+		{
+			"title": "Appsmith — Open source internal tools platform",
+			"source": "Appsmith Blog",
+			"href": "https://www.appsmith.com/blog"
+		}
+	]
+}
+
+

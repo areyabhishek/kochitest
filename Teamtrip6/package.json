@@ -1,0 +1,42 @@
+{
+  "name": "teamtrip-website",
+  "version": "1.0.0",
+  "description": "High-contrast art book aesthetic website for Teamtrip's corporate offsite planning services",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx serve .",
+    "format": "prettier --write '**/*.{html,css,js,md}'",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:js": "eslint '**/*.js'",
+    "build": "echo 'No build process needed - static site'",
+    "deploy": "echo 'Deploy to your hosting service'"
+  },
+  "keywords": [
+    "corporate",
+    "offsite",
+    "team-building",
+    "events",
+    "website",
+    "b2b"
+  ],
+  "author": "KandraDigital",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "stylelint": "^15.0.0",
+    "eslint": "^8.0.0",
+    "serve": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/teamtrip-website.git"
+  },
+  "homepage": "https://teamtrip.co.in",
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

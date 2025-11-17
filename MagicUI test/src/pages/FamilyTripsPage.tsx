@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import TripCard from '@/components/TripCard';
 import BlurFade from '@/components/magicui/blur-fade';
 import { Heart, Shield, Baby, Smile } from 'lucide-react';

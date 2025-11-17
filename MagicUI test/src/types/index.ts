@@ -7,36 +7,41 @@ export interface Trip {
   title: string;
   slug: string;
   description: string;
-  summary: string;
-  type: TripType;
-  region: Region;
-  style: TripStyle[];
-  duration: number; // days
+  longDescription?: string;
+  summary?: string;
+  type?: TripType;
+  category?: string;
+  region?: Region;
+  style?: TripStyle[];
+  duration: string; // e.g., "7 Days, 6 Nights"
   price: number;
-  images: string[];
-  destination: string;
-  countries: string[];
+  image?: string; // Single image for admin
+  images?: string[];
+  destination?: string;
+  countries?: string[];
   featured: boolean;
-  groupSize: {
+  groupSize?: {
     min: number;
     max: number;
   };
   amenities?: string[];
   inclusions: string[];
   exclusions: string[];
-  itinerary?: DayItinerary[];
-  route?: RoutePoint[];
+  itinerary: DayItinerary[];
+  route?: { from: string; to: string } | RoutePoint[];
+  ship?: { name: string; capacity: number };
   shipInfo?: ShipInfo;
-  availableDates: string[];
-  rating: number;
-  reviewCount: number;
+  availableDates?: string[];
+  rating?: number;
+  reviewCount?: number;
+  tags: string[];
 }
 
 export interface DayItinerary {
   day: number;
   title: string;
   description: string;
-  activities: string[];
+  activities?: string[];
   meals?: string[];
   accommodation?: string;
 }
@@ -64,10 +69,12 @@ export interface Testimonial {
   name: string;
   location: string;
   rating: number;
-  comment: string;
-  tripId: string;
+  content: string; // Main testimonial text
+  comment?: string; // Alternative field
+  tripName: string; // Name of the trip
+  tripId?: string;
   image: string;
-  date: string;
+  date?: string;
 }
 
 export interface SearchFilters {

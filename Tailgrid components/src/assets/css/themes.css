@@ -1,0 +1,136 @@
+/* Theme System for VoyageVista */
+
+/* Default Theme (Purple Gradient - Original Page 1) */
+:root[data-theme="default"],
+:root {
+  --primary-gradient-start: #667eea;
+  --primary-gradient-end: #764ba2;
+  --primary-color: #667eea;
+  --primary-hover: #5568d3;
+  --accent-color: #764ba2;
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Poppins', sans-serif;
+  --card-bg-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-bg-2: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-bg-3: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --badge-bg: #f3f4f6;
+  --badge-text: #667eea;
+  --cta-bg: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+}
+
+/* Minimal Zen Theme (Black/White - Original Page 2) */
+:root[data-theme="zen"] {
+  --primary-gradient-start: #111827;
+  --primary-gradient-end: #1f2937;
+  --primary-color: #111827;
+  --primary-hover: #000000;
+  --accent-color: #6b7280;
+  --heading-font: 'Inter', sans-serif;
+  --body-font: 'Inter', sans-serif;
+  --card-bg-1: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  --card-bg-2: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  --card-bg-3: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  --badge-bg: #f9fafb;
+  --badge-text: #111827;
+  --cta-bg: linear-gradient(to right, #111827 0%, #1f2937 100%);
+}
+
+/* Bold Adventure Theme (Red/Green/Colorful) */
+:root[data-theme="adventure"] {
+  --primary-gradient-start: #dc2626;
+  --primary-gradient-end: #059669;
+  --primary-color: #dc2626;
+  --primary-hover: #b91c1c;
+  --accent-color: #059669;
+  --heading-font: 'Quicksand', sans-serif;
+  --body-font: 'Nunito', sans-serif;
+  --card-bg-1: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+  --card-bg-2: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  --card-bg-3: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --badge-bg: #fef3c7;
+  --badge-text: #dc2626;
+  --cta-bg: linear-gradient(to right, #dc2626 0%, #059669 100%);
+}
+
+/* Elegant Luxury Theme (Navy/Amber - Original Page 3) */
+:root[data-theme="luxury"] {
+  --primary-gradient-start: #1e3a8a;
+  --primary-gradient-end: #1e40af;
+  --primary-color: #1e3a8a;
+  --primary-hover: #1e40af;
+  --accent-color: #f59e0b;
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Montserrat', sans-serif;
+  --card-bg-1: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  --card-bg-2: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  --card-bg-3: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  --badge-bg: #fef3c7;
+  --badge-text: #92400e;
+  --cta-bg: linear-gradient(to right, #1e3a8a 0%, #1e40af 100%);
+}
+
+/* Tropical Vibes Theme (Orange/Pink - Original Page 4) */
+:root[data-theme="tropical"] {
+  --primary-gradient-start: #f093fb;
+  --primary-gradient-end: #f5576c;
+  --primary-color: #f97316;
+  --primary-hover: #ea580c;
+  --accent-color: #ec4899;
+  --heading-font: 'Quicksand', sans-serif;
+  --body-font: 'Nunito', sans-serif;
+  --card-bg-1: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --card-bg-2: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+  --card-bg-3: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
+  --badge-bg: #ffedd5;
+  --badge-text: #c2410c;
+  --cta-bg: linear-gradient(to right, #f97316 0%, #ec4899 100%);
+}
+
+/* Apply theme variables to body */
+body {
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+}
+
+/* Theme-aware hero background */
+.hero-themed {
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+}
+
+/* Theme-aware primary buttons */
+.btn-primary-themed {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+.btn-primary-themed:hover {
+  background: var(--primary-hover) !important;
+}
+
+/* Theme-aware gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+}
+
+.gradient-cta {
+  background: var(--cta-bg);
+}
+
+/* Theme-aware text colors */
+.text-primary-themed {
+  color: var(--primary-color) !important;
+}
+
+.text-accent-themed {
+  color: var(--accent-color) !important;
+}
+
+/* Theme-aware badges */
+.badge-themed {
+  background-color: var(--badge-bg) !important;
+  color: var(--badge-text) !important;
+  border-color: var(--badge-text) !important;
+}

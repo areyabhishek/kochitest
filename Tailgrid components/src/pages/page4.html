@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia Cruises - VoyageVista</title>
+    <link rel="stylesheet" href="../../assets/css/tailwind.css">
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="../../assets/js/theme-switcher.js"></script>
+</head>
+<body class="bg-orange-50">
+
+    <!-- Vibrant Navbar -->
+    <header class="gradient-primary" x-data="{ themeOpen: false }">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <a href="page1.html" class="text-3xl font-bold text-white">VoyageVista</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="page1.html" class="text-sm font-semibold text-white/90 hover:text-white">Home</a>
+                    <a href="page2.html" class="text-sm font-semibold text-white/90 hover:text-white">Search</a>
+                    <a href="page3.html" class="text-sm font-semibold text-white/90 hover:text-white">Europe</a>
+                    <a href="page4.html" class="text-sm font-semibold text-white border-b-2 border-white pb-1">Asia</a>
+                    <!-- Theme Switcher -->
+                    <div class="relative">
+                        <button @click="themeOpen = !themeOpen" class="flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                            </svg>
+                            Themes
+                        </button>
+                        <div x-show="themeOpen" @click.away="themeOpen = false" x-transition class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-white shadow-xl p-2 z-50 border border-gray-200">
+                            <button data-theme-btn="default" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Purple Gradient</button>
+                            <button data-theme-btn="zen" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded">Minimal Zen</button>
+                            <button data-theme-btn="adventure" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-red-50 rounded">Bold Adventure</button>
+                            <button data-theme-btn="luxury" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Elegant Luxury</button>
+                            <button data-theme-btn="tropical" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 rounded">Tropical Vibes</button>
+                        </div>
+                    </div>
+                    <a href="#" class="rounded-full bg-white px-6 py-2.5 text-sm font-bold text-primary-themed hover:bg-gray-50">Book Adventure</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-themed py-28">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="mb-6 text-7xl font-bold text-white drop-shadow-lg">Asia Cruises</h1>
+            <p class="mx-auto max-w-2xl text-2xl font-medium text-white drop-shadow">Discover exotic coastlines, island-hopping and vibrant cultures aboard our Asia cruise itineraries</p>
+        </div>
+    </section>
+
+    <!-- Intro Wave -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="mx-auto max-w-4xl text-center">
+                <h2 class="mb-6 text-5xl font-bold text-primary-themed">Paradise Awaits</h2>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    From the pristine beaches of Thailand to the cultural treasures of Japan, explore Southeast Asia and the Indian Ocean like never before. Experience authentic traditions, tropical islands, and unforgettable adventures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cruises -->
+    <section class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-12 text-center text-5xl font-bold text-gray-900">Featured Tropical Voyages</h2>
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+
+                <!-- Cruise 1 -->
+                <div class="overflow-hidden rounded-3xl bg-white shadow-2xl transform transition hover:scale-105">
+                    <div class="h-72 bg-gradient-to-br from-teal-400 to-green-500 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">Thai Islands Paradise</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-4 flex items-center gap-3">
+                            <span class="rounded-full bg-orange-200 px-4 py-1.5 text-sm font-bold text-orange-800">5 Nights</span>
+                            <span class="rounded-full bg-teal-200 px-4 py-1.5 text-sm font-bold text-teal-800">Beach Lovers</span>
+                        </div>
+                        <h3 class="mb-3 text-3xl font-bold text-gray-900">5-Night Thai Islands Cruise</h3>
+                        <p class="mb-4 text-lg text-gray-600">Bangkok to Phuket • Koh Samui, Krabi, Phi Phi Islands</p>
+                        <div class="mb-6 space-y-3 border-t-2 border-orange-200 pt-5">
+                            <p class="flex items-center text-gray-700"><svg class="mr-2 h-5 w-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg><strong class="mr-2">Ship:</strong> Tropical Explorer</p>
+                            <p class="flex items-center text-gray-700"><svg class="mr-2 h-5 w-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg><strong class="mr-2">Included:</strong> Snorkeling gear, beach excursions</p>
+                            <p class="flex items-center text-gray-700"><svg class="mr-2 h-5 w-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg><strong class="mr-2">Dates:</strong> Year-round</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">From</span>
+                                <div class="text-4xl font-bold text-primary-themed">$899<span class="text-xl text-gray-500">/pp</span></div>
+                            </div>
+                            <a href="#" class="rounded-full btn-primary-themed px-8 py-4 font-bold text-white shadow-lg hover:opacity-90">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cruise 2 -->
+                <div class="overflow-hidden rounded-3xl bg-white shadow-2xl transform transition hover:scale-105">
+                    <div class="h-72 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
+                        <span class="text-2xl font-bold text-white">Japan & Korea Culture</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-4 flex items-center gap-3">
+                            <span class="rounded-full bg-purple-200 px-4 py-1.5 text-sm font-bold text-purple-800">10 Nights</span>
+                            <span class="rounded-full bg-indigo-200 px-4 py-1.5 text-sm font-bold text-indigo-800">Cultural</span>
+                        </div>
+                        <h3 class="mb-3 text-3xl font-bold text-gray-900">10-Night Japan & Korea</h3>
+                        <p class="mb-4 text-lg text-gray-600">Yokohama to Busan • Osaka, Kyoto, Seoul, Jeju Island</p>
+                        <div class="mb-6 space-y-3 border-t-2 border-orange-200 pt-5">
+                            <p class="flex items-center text-gray-700"><svg class="mr-2 h-5 w-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg><strong class="mr-2">Ship:</strong> Cultural Navigator</p>
+                            <p class="flex items-center text-gray-700"><svg class="mr-2 h-5 w-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg><strong class="mr-2">Included:</strong> Temple tours, culinary experiences</p>
+                            <p class="flex items-center text-gray-700"><svg class="mr-2 h-5 w-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg><strong class="mr-2">Dates:</strong> Spring & Fall</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm font-medium text-gray-500">From</span>
+                                <div class="text-4xl font-bold text-primary-themed">$1,850<span class="text-xl text-gray-500">/pp</span></div>
+                            </div>
+                            <a href="#" class="rounded-full btn-primary-themed px-8 py-4 font-bold text-white shadow-lg hover:opacity-90">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Asia -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-16 text-center text-5xl font-bold text-gray-900">Why Cruise Asia with Us</h2>
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+                <div class="rounded-2xl bg-gradient-to-br from-orange-100 to-orange-50 p-8 text-center">
+                    <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-orange-500">
+                        <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-2xl font-bold text-gray-900">Island Hopping</h3>
+                    <p class="text-lg text-gray-700">Explore pristine beaches and hidden coves across Southeast Asia</p>
+                </div>
+                <div class="rounded-2xl bg-gradient-to-br from-pink-100 to-pink-50 p-8 text-center">
+                    <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-pink-500">
+                        <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-2xl font-bold text-gray-900">Rich Culture</h3>
+                    <p class="text-lg text-gray-700">Immerse yourself in ancient temples and modern marvels</p>
+                </div>
+                <div class="rounded-2xl bg-gradient-to-br from-teal-100 to-teal-50 p-8 text-center">
+                    <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-teal-500">
+                        <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-2xl font-bold text-gray-900">Adventure Ready</h3>
+                    <p class="text-lg text-gray-700">Snorkeling, kayaking, and thrilling shore excursions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trip Styles -->
+    <section class="bg-white py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-16 text-center text-5xl font-bold text-gray-900">Perfect For Every Traveler</h2>
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+                <div class="rounded-3xl bg-white p-10 shadow-xl">
+                    <div class="mb-6 inline-block rounded-full bg-orange-500 px-6 py-2 text-sm font-bold text-white">FAMILY FUN</div>
+                    <h3 class="mb-6 text-3xl font-bold text-gray-900">Family Beach Adventures</h3>
+                    <ul class="mb-8 space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-2xl">🏝️</span>
+                            Kids club with tropical activities and water sports
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-2xl">🐠</span>
+                            Family snorkeling and marine life exploration
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-2xl">🍜</span>
+                            Kid-friendly Asian cuisine and cooking classes
+                        </li>
+                    </ul>
+                    <a href="page2.html" class="inline-block rounded-full btn-primary-themed px-8 py-3 font-bold text-white hover:opacity-90">Explore Family Trips →</a>
+                </div>
+                <div class="rounded-3xl bg-white p-10 shadow-xl">
+                    <div class="mb-6 inline-block rounded-full bg-pink-500 px-6 py-2 text-sm font-bold text-white">PARTY VIBES</div>
+                    <h3 class="mb-6 text-3xl font-bold text-gray-900">Bachelor/Bachelorette Escapes</h3>
+                    <ul class="mb-8 space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-2xl">🎉</span>
+                            Exclusive group cabins and private island parties
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-2xl">🏖️</span>
+                            Beach clubs, sunset cruises, and nightlife tours
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-2xl">🍹</span>
+                            VIP dining, premium cocktails, and spa packages
+                        </li>
+                    </ul>
+                    <a href="page2.html" class="inline-block rounded-full btn-primary-themed px-8 py-3 font-bold text-white hover:opacity-90">Explore Party Trips →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="gradient-cta py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="mb-6 text-5xl font-bold text-white drop-shadow-lg">Your Asian Adventure Starts Here</h2>
+            <p class="mb-10 text-2xl font-medium text-white/90 drop-shadow">Book now and save up to 25% on early bird bookings</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="page2.html" class="rounded-full bg-white px-10 py-5 text-lg font-bold text-primary-themed shadow-2xl hover:bg-gray-50">Browse All Cruises</a>
+                <a href="#" class="rounded-full border-4 border-white px-10 py-5 text-lg font-bold text-white hover:bg-white/20">Get Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-16 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-4">
+                <div>
+                    <h3 class="mb-5 text-3xl font-bold">VoyageVista</h3>
+                    <p class="text-gray-300">Tropical adventures and cultural journeys since 2010</p>
+                </div>
+                <div>
+                    <h4 class="mb-5 text-lg font-bold">Destinations</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="page3.html" class="hover:text-orange-400">Europe</a></li>
+                        <li><a href="page4.html" class="hover:text-orange-400">Asia</a></li>
+                        <li><a href="page2.html" class="hover:text-orange-400">All Tours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-5 text-lg font-bold">Support</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-orange-400">Help Center</a></li>
+                        <li><a href="#" class="hover:text-orange-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-orange-400">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-5 text-lg font-bold">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 hover:bg-orange-600">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="flex h-12 w-12 items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 VoyageVista. All rights reserved. Made with ❤️ for travelers.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

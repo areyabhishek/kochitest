@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Tours - VoyageVista</title>
+    <link rel="stylesheet" href="../../assets/css/tailwind.css">
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="../../assets/js/theme-switcher.js"></script>
+</head>
+<body class="bg-white">
+
+    <!-- Navbar - Minimalist -->
+    <header class="border-b border-gray-200 bg-white" x-data="{ themeOpen: false }">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <a href="page1.html" class="text-2xl font-bold text-gray-900">VoyageVista</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="page1.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="page2.html" class="text-sm font-medium text-primary-themed">Search</a>
+                    <a href="page3.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Europe</a>
+                    <a href="page4.html" class="text-sm font-medium text-gray-600 hover:text-gray-900">Asia</a>
+                    <!-- Theme Switcher -->
+                    <div class="relative">
+                        <button @click="themeOpen = !themeOpen" class="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                            </svg>
+                            Themes
+                        </button>
+                        <div x-show="themeOpen" @click.away="themeOpen = false" x-transition class="absolute right-0 top-full mt-2 w-48 rounded-lg bg-white shadow-xl p-2 z-50 border border-gray-200">
+                            <button data-theme-btn="default" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 rounded">Purple Gradient</button>
+                            <button data-theme-btn="zen" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded">Minimal Zen</button>
+                            <button data-theme-btn="adventure" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-red-50 rounded">Bold Adventure</button>
+                            <button data-theme-btn="luxury" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 rounded">Elegant Luxury</button>
+                            <button data-theme-btn="tropical" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 rounded">Tropical Vibes</button>
+                        </div>
+                    </div>
+                    <a href="#" class="rounded-full btn-primary-themed px-6 py-2 text-sm font-medium text-white hover:opacity-90">Book Trip</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Hero -->
+    <section class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="mb-3 text-center text-4xl font-bold text-gray-900">Find Your Perfect Adventure</h1>
+            <p class="mb-8 text-center text-lg text-gray-600">Explore our curated collection of tours and cruises</p>
+
+            <!-- Search Bar -->
+            <div class="mx-auto max-w-4xl rounded-lg bg-white p-6 shadow-sm">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+                    <input type="text" placeholder="Where to?" class="rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                    <select class="rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900">
+                        <option>All Types</option>
+                        <option>Tours</option>
+                        <option>Cruises</option>
+                    </select>
+                    <input type="text" placeholder="Duration" class="rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"/>
+                    <button class="rounded-lg btn-primary-themed px-6 py-3 text-sm font-semibold text-white hover:opacity-90">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters & Results -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+
+                <!-- Sidebar Filters -->
+                <aside class="w-full lg:w-64 flex-shrink-0">
+                    <div class="sticky top-4">
+                        <h3 class="mb-4 text-lg font-semibold text-gray-900">Filters</h3>
+
+                        <!-- Destination Filter -->
+                        <div class="mb-6">
+                            <h4 class="mb-3 text-sm font-medium text-gray-900">Destination</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Europe</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Asia</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Mediterranean</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Southeast Asia</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Trip Style Filter -->
+                        <div class="mb-6">
+                            <h4 class="mb-3 text-sm font-medium text-gray-900">Trip Style</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Family Friendly</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Bachelor/Bachelorette</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Couples</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Solo Travelers</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Duration Filter -->
+                        <div class="mb-6">
+                            <h4 class="mb-3 text-sm font-medium text-gray-900">Duration</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">3-7 days</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">8-14 days</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">15+ days</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h4 class="mb-3 text-sm font-medium text-gray-900">Price Range</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">Under $500</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">$500 - $1000</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">$1000 - $2000</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"/>
+                                    <span class="ml-2 text-sm text-gray-700">$2000+</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="w-full rounded-lg border border-gray-300 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Clear All</button>
+                    </div>
+                </aside>
+
+                <!-- Results Grid -->
+                <div class="flex-1">
+                    <!-- Sort & Count -->
+                    <div class="mb-6 flex items-center justify-between">
+                        <p class="text-sm text-gray-600">Showing 24 trips</p>
+                        <select class="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900">
+                            <option>Most Popular</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Duration: Short to Long</option>
+                            <option>Newest First</option>
+                        </select>
+                    </div>
+
+                    <!-- Trip Cards Grid -->
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+                        <!-- Card 1 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-blue-400 to-blue-600">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Mediterranean</div>
+                                <span class="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-gray-900">Popular</span>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Cruise</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">7 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Mediterranean Magic</h3>
+                                <p class="mb-4 text-sm text-gray-600">Barcelona to Rome • Family Friendly</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-primary-themed">$1,299</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page3.html" class="text-sm font-semibold text-primary-themed hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-green-400 to-teal-500">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Thailand</div>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Tour</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">10 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Thailand Beach & Culture</h3>
+                                <p class="mb-4 text-sm text-gray-600">Bangkok to Phuket • Adventure</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-primary-themed">$899</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page4.html" class="text-sm font-semibold text-primary-themed hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-purple-400 to-pink-500">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Alps</div>
+                                <span class="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-gray-900">Family</span>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Tour</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">6 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Family Alps Adventure</h3>
+                                <p class="mb-4 text-sm text-gray-600">Switzerland & Austria • Kids Friendly</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-primary-themed">$1,599</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page3.html" class="text-sm font-semibold text-primary-themed hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-orange-400 to-red-500">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Ibiza Party</div>
+                                <span class="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-gray-900">Party</span>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Tour</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">5 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Lisbon & Ibiza Party</h3>
+                                <p class="mb-4 text-sm text-gray-600">Portugal & Spain • Bachelor Party</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-gray-900">$749</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page3.html" class="text-sm font-semibold text-gray-900 hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-indigo-400 to-blue-500">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Greek Islands</div>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Cruise</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">8 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Greek Islands Escape</h3>
+                                <p class="mb-4 text-sm text-gray-600">Athens to Santorini • Couples</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-gray-900">$1,450</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page3.html" class="text-sm font-semibold text-gray-900 hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-orange-500">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Vietnam</div>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Tour</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">12 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Vietnam Discovery</h3>
+                                <p class="mb-4 text-sm text-gray-600">Hanoi to Ho Chi Minh • Culture</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-gray-900">$1,099</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page4.html" class="text-sm font-semibold text-gray-900 hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 7 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-cyan-400 to-blue-600">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Norway</div>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Cruise</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">9 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Norwegian Fjords</h3>
+                                <p class="mb-4 text-sm text-gray-600">Bergen to North Cape • Nature</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-gray-900">$1,850</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page3.html" class="text-sm font-semibold text-gray-900 hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 8 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-pink-400 to-rose-500">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Bali</div>
+                                <span class="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-gray-900">Hot</span>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Tour</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">8 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Bali Wellness Retreat</h3>
+                                <p class="mb-4 text-sm text-gray-600">Ubud & Canggu • Relaxation</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-gray-900">$950</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page4.html" class="text-sm font-semibold text-gray-900 hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 9 -->
+                        <div class="group overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-lg">
+                            <div class="relative h-48 bg-gradient-to-br from-emerald-400 to-green-600">
+                                <div class="absolute inset-0 flex items-center justify-center text-white font-medium">Iceland</div>
+                            </div>
+                            <div class="p-5">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">Tour</span>
+                                    <span class="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">7 days</span>
+                                </div>
+                                <h3 class="mb-2 text-lg font-semibold text-gray-900">Iceland Northern Lights</h3>
+                                <p class="mb-4 text-sm text-gray-600">Reykjavik Ring Road • Adventure</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-2xl font-bold text-gray-900">$1,750</span>
+                                        <span class="text-sm text-gray-500">/person</span>
+                                    </div>
+                                    <a href="page3.html" class="text-sm font-semibold text-gray-900 hover:underline">View →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-12 flex items-center justify-center gap-2">
+                        <button class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</button>
+                        <button class="rounded-lg btn-primary-themed px-4 py-2 text-sm font-medium text-white">1</button>
+                        <button class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">2</button>
+                        <button class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">3</button>
+                        <button class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-cta py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="mb-4 text-3xl font-bold text-white">Can't find what you're looking for?</h2>
+            <p class="mb-8 text-lg text-white/90">Let us create a custom itinerary just for you</p>
+            <button class="rounded-full bg-white px-8 py-3 font-semibold text-primary-themed hover:bg-gray-100">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Footer - Minimal -->
+    <footer class="border-t border-gray-200 bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div>
+                    <h4 class="mb-4 text-sm font-semibold text-gray-900">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-gray-900">About</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Blog</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4 text-sm font-semibold text-gray-900">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-gray-900">Help Center</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Contact</a></li>
+                        <li><a href="#" class="hover:text-gray-900">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4 text-sm font-semibold text-gray-900">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-gray-900">Privacy</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Terms</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4 text-sm font-semibold text-gray-900">Social</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-gray-900">Facebook</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Instagram</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
+                <p>&copy; 2025 VoyageVista. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

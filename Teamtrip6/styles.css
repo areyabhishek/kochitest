@@ -1,0 +1,1335 @@
+/* ===================================
+   CSS VARIABLES - Design System
+   =================================== */
+:root {
+    /* Base spacing & layout (shared across themes) */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    --space-xxl: 8rem;
+    --max-width: 1400px;
+    --margin-side: 5vw;
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-slow: 1.2s;
+    --duration-medium: 0.6s;
+}
+
+/* ===================================
+   THEME: ART BOOK (Default)
+   High-contrast, print poster aesthetic
+   =================================== */
+[data-theme="artbook"] {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-accent: #FF4400;
+    --color-grey-light: #F5F5F5;
+    --color-grey-dark: #333333;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ===================================
+   THEME: BRUTALIST
+   Raw concrete, stark contrast, geometric
+   =================================== */
+[data-theme="brutalist"] {
+    --color-black: #1a1a1a;
+    --color-white: #f0f0f0;
+    --color-accent: #ffff00;
+    --color-grey-light: #e8e8e8;
+    --color-grey-dark: #2d2d2d;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Mono', monospace;
+}
+
+/* ===================================
+   THEME: RETRO WAVE
+   80s neon, synthwave, purple/pink/cyan
+   =================================== */
+[data-theme="retro"] {
+    --color-black: #0a0a14;
+    --color-white: #f0e7ff;
+    --color-accent: #ff00ff;
+    --color-grey-light: #1a1a2e;
+    --color-grey-dark: #16213e;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Exo 2', sans-serif;
+}
+
+/* ===================================
+   THEME: EDITORIAL
+   High fashion magazine, elegant, refined
+   =================================== */
+[data-theme="editorial"] {
+    --color-black: #0f0f0f;
+    --color-white: #fffef9;
+    --color-accent: #b8860b;
+    --color-grey-light: #faf9f6;
+    --color-grey-dark: #2b2b2b;
+    --font-heading: 'Bodoni Moda', serif;
+    --font-body: 'Crimson Text', serif;
+}
+
+/* ===================================
+   THEME: TECHNO
+   Industrial rave, laser-cut, high energy
+   =================================== */
+[data-theme="techno"] {
+    --color-black: #050505;
+    --color-white: #00ff00;
+    --color-accent: #00ffff;
+    --color-grey-light: #0d0d0d;
+    --color-grey-dark: #1a1a1a;
+    --font-heading: 'Rajdhani', sans-serif;
+    --font-body: 'Share Tech Mono', monospace;
+}
+
+/* ===================================
+   THEME: FILM EDITORIAL
+   Film editor's scrapbook, indie art magazine
+   =================================== */
+[data-theme="film"] {
+    --color-black: #0f0d0c;
+    --color-white: #f8f6f1;
+    --color-accent: #c1441e;
+    --color-grey-light: #ebe9e3;
+    --color-grey-dark: #2d2925;
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Libre Franklin', sans-serif;
+}
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* Add grain texture to body */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: all 0.3s var(--ease-smooth);
+    position: relative;
+}
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ===================================
+   THEME SWITCHER
+   =================================== */
+.theme-switcher {
+    position: fixed;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: 10000;
+    display: flex;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+    background: var(--color-black);
+    border: 2px solid var(--color-white);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.theme-btn {
+    padding: var(--space-xs) var(--space-sm);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+    background: transparent;
+    border: 1px solid var(--color-white);
+    cursor: pointer;
+    transition: all 0.3s var(--ease-smooth);
+    white-space: nowrap;
+}
+
+.theme-btn:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    transform: translateY(-2px);
+}
+
+.theme-btn.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+/* Theme-specific switcher backgrounds */
+[data-theme="brutalist"] .theme-switcher {
+    border: 4px solid var(--color-accent);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="retro"] .theme-switcher {
+    background: linear-gradient(135deg, #ff00ff20, #00ffff20);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 30px var(--color-accent);
+}
+
+[data-theme="editorial"] .theme-switcher {
+    background: var(--color-grey-light);
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="techno"] .theme-switcher {
+    background: var(--color-black);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 20px var(--color-accent), inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+[data-theme="film"] .theme-switcher {
+    background: var(--color-white);
+    border: 1px solid var(--color-grey-dark);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="film"] .theme-btn {
+    color: var(--color-black);
+    border-color: var(--color-grey-dark);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+}
+
+[data-theme="film"] .theme-btn:hover {
+    background: var(--color-grey-light);
+    color: var(--color-accent);
+}
+
+[data-theme="film"] .theme-btn.active {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+/* Scroll Progress Bar (Film Editorial) */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--color-accent);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    opacity: 0;
+}
+
+[data-theme="film"] .scroll-progress {
+    opacity: 1;
+    height: 3px;
+    background: var(--color-accent);
+    box-shadow: 0 0 8px rgba(139, 46, 31, 0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .theme-switcher {
+        top: var(--space-sm);
+        right: var(--space-sm);
+        flex-wrap: wrap;
+        max-width: calc(100vw - 2rem);
+    }
+
+    .theme-btn {
+        font-size: 0.65rem;
+        padding: 6px 10px;
+    }
+}
+
+/* ===================================
+   SECTION LAYOUT
+   =================================== */
+section {
+    padding: var(--space-xxl) var(--margin-side);
+    position: relative;
+}
+
+.section-title {
+    margin-bottom: var(--space-lg);
+    text-align: left;
+    max-width: 900px;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+    opacity: 0.8;
+}
+
+.section-label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-grey-dark) 100%);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    padding: 0 var(--margin-side);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp var(--duration-slow) var(--ease-smooth) forwards;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-sm);
+    line-height: 0.95;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300;
+    font-family: var(--font-body);
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+.hero-tagline {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+}
+
+.hero-description {
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: var(--space-md);
+    font-weight: 300;
+}
+
+.hero-experts {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* ===================================
+   FACTS SECTION
+   =================================== */
+.facts-section {
+    background-color: var(--color-white);
+    border-top: 3px solid var(--color-black);
+    border-bottom: 3px solid var(--color-black);
+}
+
+.facts-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.facts-intro {
+    margin-bottom: var(--space-lg);
+}
+
+.facts-statement {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.5;
+    max-width: 900px;
+    font-weight: 300;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+}
+
+.metric-card {
+    text-align: left;
+}
+
+.metric-value {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+}
+
+.metric-label {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.benefit-item {
+    padding: var(--space-md);
+    border: 2px solid var(--color-black);
+    font-size: 1.125rem;
+    font-weight: 400;
+    transition: all 0.3s var(--ease-smooth);
+    cursor: pointer;
+    background-color: var(--color-white);
+}
+
+.benefit-item:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   DESTINATIONS SECTION
+   =================================== */
+.destinations-section {
+    background-color: var(--color-grey-light);
+}
+
+.destination-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: var(--space-xxl);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-black);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.destination-card.visible {
+    animation: fadeInUp var(--duration-slow) var(--ease-smooth) forwards;
+}
+
+.destination-card.reverse {
+    direction: rtl;
+}
+
+.destination-card.reverse .destination-content {
+    direction: ltr;
+}
+
+.destination-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.destination-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-smooth);
+}
+
+.destination-card:hover .destination-image {
+    transform: scale(1.05);
+}
+
+/* Placeholder images with high-contrast style */
+.placeholder-coorg {
+    background: linear-gradient(135deg, #1a4d2e 0%, #4f7942 50%, #8b7355 100%);
+}
+
+.placeholder-wayanad {
+    background: linear-gradient(135deg, #2d5016 0%, #3e6b28 50%, #5c4033 100%);
+}
+
+.placeholder-pondy {
+    background: linear-gradient(135deg, #1e3a5f 0%, #d4a574 50%, #f4e4c1 100%);
+}
+
+.placeholder-mussoorie {
+    background: linear-gradient(135deg, #4a5859 0%, #6b8e95 50%, #a8b5b2 100%);
+}
+
+.destination-content {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destination-header {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--color-black);
+}
+
+.destination-title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: var(--space-sm);
+}
+
+.rating {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.destination-description {
+    margin-bottom: var(--space-md);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+.destination-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.destination-features li {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.destination-features li:last-child {
+    border-bottom: none;
+}
+
+.destination-features li::before {
+    content: '→';
+    margin-right: var(--space-sm);
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* ===================================
+   SERVICES SECTION
+   =================================== */
+.services-section {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.services-intro {
+    margin-bottom: var(--space-xl);
+    max-width: 800px;
+}
+
+.services-tagline {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+}
+
+.services-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.service-block {
+    padding: var(--space-lg);
+    border: 2px solid var(--color-white);
+    transition: all 0.3s var(--ease-smooth);
+    cursor: pointer;
+}
+
+.service-block:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-block:hover .service-category {
+    border-bottom-color: var(--color-white);
+}
+
+.service-category {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid currentColor;
+}
+
+.service-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-list li {
+    padding: var(--space-sm) 0;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    transition: transform 0.2s var(--ease-smooth);
+}
+
+.service-list li:hover {
+    transform: translateX(10px);
+}
+
+.service-list li::before {
+    content: '•';
+    margin-right: var(--space-sm);
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color 0.3s var(--ease-smooth);
+}
+
+.service-block:hover .service-list li::before {
+    color: var(--color-white);
+}
+
+/* ===================================
+   CULTURE SECTION
+   =================================== */
+.culture-section {
+    background-color: var(--color-grey-light);
+}
+
+.culture-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.culture-intro {
+    margin-bottom: var(--space-xl);
+    max-width: 900px;
+}
+
+.culture-intro h3 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-md);
+}
+
+.culture-intro p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
+.culture-item {
+    padding: var(--space-lg) var(--space-md);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-black);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s var(--ease-smooth);
+    cursor: pointer;
+}
+
+.culture-item:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--space-xl) var(--margin-side) var(--space-lg);
+    border-top: 3px solid var(--color-white);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    max-width: var(--max-width);
+    margin: 0 auto var(--space-xl);
+}
+
+.footer-title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: var(--space-sm);
+}
+
+.footer-links a {
+    color: var(--color-white);
+    font-weight: 400;
+    transition: all 0.3s var(--ease-smooth);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 1024px) {
+    :root {
+        --space-xl: 4rem;
+        --space-xxl: 5rem;
+        --margin-side: 4vw;
+    }
+
+    .destination-card {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card.reverse {
+        direction: ltr;
+    }
+
+    .destination-image-wrapper {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --space-lg: 2.5rem;
+        --space-xl: 3rem;
+        --space-xxl: 4rem;
+        --margin-side: 5vw;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .destination-image-wrapper {
+        min-height: 300px;
+    }
+}
+
+/* ===================================
+   THEME-SPECIFIC VISUAL ENHANCEMENTS
+   =================================== */
+
+/* Brutalist Theme - Hard edges, bold shapes */
+[data-theme="brutalist"] .hero {
+    background: var(--color-black);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+[data-theme="brutalist"] .destination-card,
+[data-theme="brutalist"] .service-block {
+    border: 4px solid var(--color-black);
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="brutalist"] .benefit-item {
+    border: 3px solid var(--color-black);
+    transform: rotate(-1deg);
+}
+
+[data-theme="brutalist"] .benefit-item:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+/* Retro Wave Theme - Neon glows, grid lines */
+[data-theme="retro"] body::before {
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, 0.05) 25%, rgba(255, 0, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.05) 75%, rgba(255, 0, 255, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    opacity: 1;
+}
+
+[data-theme="retro"] .hero {
+    background: linear-gradient(135deg, #0a0a14 0%, #16213e 50%, #1a1a2e 100%);
+    position: relative;
+}
+
+[data-theme="retro"] .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.2), transparent 70%);
+    pointer-events: none;
+}
+
+[data-theme="retro"] .section-title {
+    text-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-accent);
+}
+
+[data-theme="retro"] .metric-value {
+    text-shadow: 0 0 15px var(--color-accent), 0 0 30px var(--color-accent);
+}
+
+[data-theme="retro"] .destination-card {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+/* Editorial Theme - Refined spacing, elegant details */
+[data-theme="editorial"] body {
+    background: var(--color-grey-light);
+}
+
+[data-theme="editorial"] .section-title {
+    letter-spacing: 0.05em;
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: var(--space-sm);
+    display: inline-block;
+}
+
+[data-theme="editorial"] .destination-card {
+    border: 1px solid var(--color-grey-dark);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="editorial"] .hero {
+    background: linear-gradient(to bottom, var(--color-grey-light), var(--color-white));
+}
+
+[data-theme="editorial"] .benefit-item {
+    border: 1px solid var(--color-accent);
+    background: var(--color-white);
+}
+
+/* Techno Theme - Digital, glitchy, high-tech */
+[data-theme="techno"] body {
+    background: var(--color-black);
+}
+
+[data-theme="techno"] .hero {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 0, 0.03) 2px,
+            rgba(0, 255, 0, 0.03) 4px
+        ),
+        var(--color-black);
+}
+
+[data-theme="techno"] .section-title {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    position: relative;
+}
+
+[data-theme="techno"] .section-title::before {
+    content: '>';
+    color: var(--color-accent);
+    margin-right: 10px;
+}
+
+[data-theme="techno"] .destination-card,
+[data-theme="techno"] .service-block {
+    border: 2px solid var(--color-accent);
+    box-shadow:
+        0 0 10px var(--color-accent),
+        inset 0 0 10px rgba(0, 255, 255, 0.1);
+    background: rgba(0, 20, 20, 0.5);
+}
+
+[data-theme="techno"] .metric-value {
+    font-family: 'Audiowide', sans-serif;
+    text-shadow: 0 0 10px currentColor;
+}
+
+[data-theme="techno"] h1,
+[data-theme="techno"] h2 {
+    text-shadow: 0 0 5px var(--color-white);
+}
+
+/* Film Editorial Theme - Raw, moody, asymmetric */
+[data-theme="film"] body {
+    background: var(--color-white);
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--color-black);
+}
+
+[data-theme="film"] body::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulance type='fractalNoise' baseFrequency='6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+}
+
+[data-theme="film"] .hero {
+    background: linear-gradient(to bottom, var(--color-grey-light), var(--color-white));
+    padding-left: 12vw;
+    padding-right: 8vw;
+    position: relative;
+}
+
+[data-theme="film"] .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-grey-dark);
+    opacity: 0.2;
+}
+
+[data-theme="film"] .hero-title {
+    line-height: 0.9;
+    max-width: 600px;
+    letter-spacing: -0.04em;
+}
+
+[data-theme="film"] .hero-description {
+    max-width: 550px;
+    line-height: 1.9;
+    font-weight: 400;
+    color: var(--color-black);
+}
+
+[data-theme="film"] .section-title {
+    max-width: 700px;
+    line-height: 1.1;
+    margin-bottom: var(--space-xl);
+}
+
+[data-theme="film"] section {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Asymmetric margins */
+[data-theme="film"] .facts-section {
+    padding-left: 8vw;
+    padding-right: 12vw;
+}
+
+[data-theme="film"] .destinations-section {
+    padding-left: 12vw;
+    padding-right: 6vw;
+}
+
+[data-theme="film"] .services-section {
+    background: var(--color-grey-light);
+    padding-left: 6vw;
+    padding-right: 12vw;
+}
+
+[data-theme="film"] .culture-section {
+    padding-left: 10vw;
+    padding-right: 8vw;
+}
+
+/* Destination cards with corner marks */
+[data-theme="film"] .destination-card {
+    border: none;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    position: relative;
+    background: var(--color-white);
+}
+
+[data-theme="film"] .destination-card::before,
+[data-theme="film"] .destination-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-accent);
+}
+
+[data-theme="film"] .destination-card::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+[data-theme="film"] .destination-card::after {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+[data-theme="film"] .destination-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+/* Image captions/notes */
+[data-theme="film"] .destination-title::after {
+    content: attr(data-caption);
+    display: block;
+    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-grey-dark);
+    margin-top: var(--space-xs);
+    opacity: 0.6;
+}
+
+[data-theme="film"] .rating {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+}
+
+/* Tight headings */
+[data-theme="film"] h1,
+[data-theme="film"] h2,
+[data-theme="film"] h3 {
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+    font-weight: 900;
+}
+
+/* Loose body text */
+[data-theme="film"] p {
+    line-height: 1.85;
+    color: var(--color-black);
+    font-weight: 400;
+}
+
+/* Print-style dividing lines */
+[data-theme="film"] .destination-header {
+    border-bottom: 1px solid var(--color-grey-dark);
+    opacity: 0.3;
+}
+
+[data-theme="film"] .benefit-item {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--color-white);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="film"] .metric-value {
+    color: var(--color-accent);
+}
+
+[data-theme="film"] .footer {
+    background: var(--color-grey-dark);
+    color: var(--color-white);
+    font-size: 0.875rem;
+    padding: var(--space-lg) var(--margin-side);
+}
+
+[data-theme="film"] .footer::before {
+    content: '— Film Credits —';
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-md);
+    opacity: 0.5;
+}
+
+[data-theme="film"] .service-block {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--color-white);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Slow, film-like motion */
+[data-theme="film"] .destination-card {
+    animation-duration: 1.5s;
+}
+
+[data-theme="film"] .hero-content {
+    animation-duration: 1.8s;
+}
+
+/* Film Editorial hover improvements */
+[data-theme="film"] .benefit-item:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+[data-theme="film"] .service-block:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+/* ===================================
+   THEME-SPECIFIC HOVER IMPROVEMENTS
+   =================================== */
+
+/* Techno theme - better contrast on hover */
+[data-theme="techno"] .benefit-item:hover {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+    border-color: var(--color-accent);
+}
+
+[data-theme="techno"] .culture-item:hover {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+    border-color: var(--color-accent);
+}
+
+[data-theme="techno"] .service-block:hover {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+}
+
+[data-theme="techno"] .service-block:hover .service-list li::before {
+    color: var(--color-black);
+}
+
+/* Retro Wave theme - enhance glows on hover */
+[data-theme="retro"] .benefit-item:hover {
+    box-shadow: 0 8px 30px var(--color-accent);
+}
+
+[data-theme="retro"] .culture-item:hover {
+    box-shadow: 0 8px 30px var(--color-accent);
+}
+
+[data-theme="retro"] .service-block:hover {
+    box-shadow: 0 12px 40px var(--color-accent);
+}
+
+/* Brutalist theme - stronger shadows */
+[data-theme="brutalist"] .benefit-item:hover {
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="brutalist"] .culture-item:hover {
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.4);
+    transform: translate(-4px, -4px);
+}
+
+[data-theme="brutalist"] .service-block:hover {
+    box-shadow: 15px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Theme transition */
+body {
+    transition: background-color 0.5s var(--ease-smooth);
+}
+
+section {
+    transition: background-color 0.5s var(--ease-smooth);
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+    body::before {
+        display: none;
+    }
+
+    .theme-switcher {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}

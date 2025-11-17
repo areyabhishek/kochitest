@@ -191,5 +191,5 @@ export function getInitialTheme(): ThemeName {
 
 export function getCurrentThemeStyle(): ThemeStyle {
   const themeName = getInitialTheme();
-  return themes[themeName].style;
+  return themes[themeName].style as ThemeStyle;
 }

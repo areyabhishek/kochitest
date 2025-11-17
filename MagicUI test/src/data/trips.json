@@ -1,0 +1,683 @@
+[
+  {
+    "id": "1",
+    "title": "Mediterranean Magic Cruise",
+    "slug": "mediterranean-magic-cruise",
+    "description": "Sail through the stunning Mediterranean coastline visiting iconic ports from Barcelona to Rome. Experience the perfect blend of culture, cuisine, and coastal beauty.",
+    "summary": "7-night Mediterranean cruise from Barcelona to Rome",
+    "type": "cruise",
+    "region": "europe",
+    "style": ["family", "couples", "mixed"],
+    "duration": 7,
+    "price": 1299,
+    "images": [
+      "https://images.unsplash.com/photo-1545628865-68b8f5c65a04?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1535551951406-a19828b0a76b?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Mediterranean Sea",
+    "countries": ["Spain", "France", "Italy"],
+    "featured": true,
+    "groupSize": {
+      "min": 2,
+      "max": 2000
+    },
+    "amenities": ["Kids Club", "Fine Dining", "Pool", "Spa", "Entertainment Shows"],
+    "inclusions": ["Accommodation", "All Meals", "Entertainment", "Port Taxes"],
+    "exclusions": ["Flights", "Shore Excursions", "Drinks Package", "Gratuities"],
+    "route": [
+      {
+        "location": "Barcelona",
+        "country": "Spain",
+        "departureTime": "17:00",
+        "highlights": ["Sagrada Familia", "Gothic Quarter", "Las Ramblas"]
+      },
+      {
+        "location": "Marseille",
+        "country": "France",
+        "arrivalTime": "08:00",
+        "departureTime": "18:00",
+        "highlights": ["Old Port", "Notre-Dame de la Garde", "Calanques"]
+      },
+      {
+        "location": "Monaco",
+        "country": "Monaco",
+        "arrivalTime": "07:00",
+        "departureTime": "17:00",
+        "highlights": ["Monte Carlo Casino", "Prince's Palace", "Oceanographic Museum"]
+      },
+      {
+        "location": "Florence/Livorno",
+        "country": "Italy",
+        "arrivalTime": "08:00",
+        "departureTime": "19:00",
+        "highlights": ["Duomo", "Uffizi Gallery", "Ponte Vecchio"]
+      },
+      {
+        "location": "Rome/Civitavecchia",
+        "country": "Italy",
+        "arrivalTime": "07:00",
+        "departureTime": "",
+        "highlights": ["Colosseum", "Vatican City", "Trevi Fountain"]
+      }
+    ],
+    "shipInfo": {
+      "name": "MS Azure Dream",
+      "class": "Premium",
+      "cabinTypes": ["Interior", "Ocean View", "Balcony", "Suite"],
+      "dining": ["Main Dining Room", "Buffet", "Specialty Restaurants", "Room Service"],
+      "entertainment": ["Theater Shows", "Live Music", "Casino", "Nightclub"],
+      "kidsClub": true,
+      "adultOnly": false
+    },
+    "availableDates": ["2025-05-15", "2025-06-12", "2025-07-10", "2025-08-14", "2025-09-11"],
+    "rating": 4.8,
+    "reviewCount": 342
+  },
+  {
+    "id": "2",
+    "title": "Thailand Beach & Culture Tour",
+    "slug": "thailand-beach-culture-tour",
+    "description": "Discover the perfect balance of Thailand's vibrant culture and pristine beaches. From Bangkok's temples to Phuket's shores, experience the best of the Land of Smiles.",
+    "summary": "10-day tour exploring Bangkok, Chiang Mai, and Phuket",
+    "type": "tour",
+    "region": "asia",
+    "style": ["family", "couples", "solo"],
+    "duration": 10,
+    "price": 1599,
+    "images": [
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Thailand",
+    "countries": ["Thailand"],
+    "featured": true,
+    "groupSize": {
+      "min": 2,
+      "max": 16
+    },
+    "inclusions": ["Hotels", "Domestic Flights", "Most Meals", "Guided Tours", "Entrance Fees"],
+    "exclusions": ["International Flights", "Some Meals", "Personal Expenses", "Travel Insurance"],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Bangkok",
+        "description": "Welcome to Thailand! Transfer to hotel and evening orientation.",
+        "activities": ["Airport Transfer", "Hotel Check-in", "Welcome Dinner"],
+        "meals": ["Dinner"],
+        "accommodation": "5-star Hotel Bangkok"
+      },
+      {
+        "day": 2,
+        "title": "Bangkok Temple Tour",
+        "description": "Explore Bangkok's most famous temples and the Grand Palace.",
+        "activities": ["Grand Palace", "Wat Pho", "Wat Arun", "River Cruise"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "5-star Hotel Bangkok"
+      },
+      {
+        "day": 3,
+        "title": "Flight to Chiang Mai",
+        "description": "Morning flight to Chiang Mai, afternoon temple visit.",
+        "activities": ["Domestic Flight", "Doi Suthep Temple", "Old City Walking Tour"],
+        "meals": ["Breakfast", "Dinner"],
+        "accommodation": "4-star Hotel Chiang Mai"
+      },
+      {
+        "day": 4,
+        "title": "Elephant Sanctuary",
+        "description": "Ethical elephant experience and jungle adventure.",
+        "activities": ["Elephant Sanctuary", "Waterfall Visit", "Thai Cooking Class"],
+        "meals": ["Breakfast", "Lunch", "Dinner"],
+        "accommodation": "4-star Hotel Chiang Mai"
+      },
+      {
+        "day": 5,
+        "title": "Chiang Mai to Phuket",
+        "description": "Flight to Phuket, beach relaxation begins.",
+        "activities": ["Domestic Flight", "Beach Time", "Sunset Viewing"],
+        "meals": ["Breakfast"],
+        "accommodation": "Beach Resort Phuket"
+      },
+      {
+        "day": 6,
+        "title": "Phi Phi Islands Day Trip",
+        "description": "Full day exploring the stunning Phi Phi Islands.",
+        "activities": ["Speedboat Tour", "Snorkeling", "Maya Bay Visit", "Beach BBQ"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Beach Resort Phuket"
+      },
+      {
+        "day": 7,
+        "title": "Phuket Beach Day",
+        "description": "Leisure day at the beach or optional activities.",
+        "activities": ["Free Time", "Optional Spa", "Optional Water Sports"],
+        "meals": ["Breakfast"],
+        "accommodation": "Beach Resort Phuket"
+      },
+      {
+        "day": 8,
+        "title": "Phang Nga Bay Tour",
+        "description": "Explore the dramatic limestone karsts of Phang Nga Bay.",
+        "activities": ["James Bond Island", "Kayaking", "Sea Caves", "Floating Village"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Beach Resort Phuket"
+      },
+      {
+        "day": 9,
+        "title": "Phuket Old Town",
+        "description": "Discover Phuket's cultural heritage and cuisine.",
+        "activities": ["Old Town Walking Tour", "Local Markets", "Farewell Dinner"],
+        "meals": ["Breakfast", "Dinner"],
+        "accommodation": "Beach Resort Phuket"
+      },
+      {
+        "day": 10,
+        "title": "Departure",
+        "description": "Transfer to airport for your departure flight.",
+        "activities": ["Hotel Check-out", "Airport Transfer"],
+        "meals": ["Breakfast"],
+        "accommodation": null
+      }
+    ],
+    "availableDates": ["2025-02-15", "2025-03-20", "2025-04-10", "2025-10-05", "2025-11-12"],
+    "rating": 4.9,
+    "reviewCount": 287
+  },
+  {
+    "id": "3",
+    "title": "Baltic Capitals Cruise",
+    "slug": "baltic-capitals-cruise",
+    "description": "Explore Northern Europe's magnificent capital cities on this unforgettable Baltic Sea cruise. From Stockholm to St. Petersburg, discover royal palaces, medieval towns, and vibrant cultures.",
+    "summary": "12-night Baltic cruise visiting 8 cities",
+    "type": "cruise",
+    "region": "europe",
+    "style": ["couples", "solo", "mixed"],
+    "duration": 12,
+    "price": 1899,
+    "images": [
+      "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Baltic Sea",
+    "countries": ["Sweden", "Finland", "Russia", "Estonia", "Germany", "Denmark"],
+    "featured": true,
+    "groupSize": {
+      "min": 2,
+      "max": 2500
+    },
+    "amenities": ["Multiple Restaurants", "Theater", "Spa", "Fitness Center", "Library"],
+    "inclusions": ["Accommodation", "All Meals", "Entertainment", "Port Taxes", "Selected Shore Excursions"],
+    "exclusions": ["Flights", "Russia Visa", "Premium Drinks", "Specialty Dining"],
+    "route": [
+      {
+        "location": "Stockholm",
+        "country": "Sweden",
+        "departureTime": "17:00",
+        "highlights": ["Gamla Stan", "Vasa Museum", "Royal Palace"]
+      },
+      {
+        "location": "Helsinki",
+        "country": "Finland",
+        "arrivalTime": "09:00",
+        "departureTime": "18:00",
+        "highlights": ["Senate Square", "Temppeliaukio Church", "Design District"]
+      },
+      {
+        "location": "St. Petersburg",
+        "country": "Russia",
+        "arrivalTime": "07:00",
+        "departureTime": "19:00",
+        "highlights": ["Hermitage Museum", "Peterhof Palace", "Church of Spilled Blood"]
+      },
+      {
+        "location": "Tallinn",
+        "country": "Estonia",
+        "arrivalTime": "08:00",
+        "departureTime": "17:00",
+        "highlights": ["Old Town", "Toompea Castle", "Alexander Nevsky Cathedral"]
+      },
+      {
+        "location": "Berlin/Warnemünde",
+        "country": "Germany",
+        "arrivalTime": "07:00",
+        "departureTime": "21:00",
+        "highlights": ["Brandenburg Gate", "Berlin Wall", "Museum Island"]
+      },
+      {
+        "location": "Copenhagen",
+        "country": "Denmark",
+        "arrivalTime": "08:00",
+        "departureTime": "",
+        "highlights": ["Tivoli Gardens", "Nyhavn", "Little Mermaid"]
+      }
+    ],
+    "shipInfo": {
+      "name": "MS Nordic Majesty",
+      "class": "Luxury",
+      "cabinTypes": ["Ocean View", "Balcony", "Junior Suite", "Royal Suite"],
+      "dining": ["Grand Dining Room", "Italian Restaurant", "Asian Fusion", "Grill", "24h Room Service"],
+      "entertainment": ["Broadway Shows", "Live Orchestra", "Comedy Club", "Cinema"],
+      "kidsClub": false,
+      "adultOnly": false
+    },
+    "availableDates": ["2025-05-20", "2025-06-15", "2025-07-08", "2025-08-10"],
+    "rating": 4.7,
+    "reviewCount": 198
+  },
+  {
+    "id": "4",
+    "title": "Bachelor Party Lisbon & Ibiza",
+    "slug": "bachelor-party-lisbon-ibiza",
+    "description": "The ultimate bachelor party experience! Start in Lisbon's vibrant nightlife scene, then hit the legendary clubs of Ibiza. VIP treatment, beach clubs, and unforgettable parties await.",
+    "summary": "7-day party tour in Portugal and Spain",
+    "type": "tour",
+    "region": "europe",
+    "style": ["bachelor"],
+    "duration": 7,
+    "price": 1799,
+    "images": [
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Lisbon & Ibiza",
+    "countries": ["Portugal", "Spain"],
+    "featured": true,
+    "groupSize": {
+      "min": 6,
+      "max": 20
+    },
+    "amenities": ["VIP Club Access", "Private Villa", "Party Bus", "Beach Club Access"],
+    "inclusions": ["Accommodation", "Some Meals", "VIP Club Entry", "Party Activities", "Airport Transfers"],
+    "exclusions": ["Flights", "Most Drinks", "Personal Expenses"],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival Lisbon",
+        "description": "Meet the group, check into your boutique hotel, evening welcome party.",
+        "activities": ["Airport Transfer", "Hotel Check-in", "Rooftop Bar Welcome", "Bar Crawl"],
+        "meals": ["Dinner"],
+        "accommodation": "Boutique Hotel Lisbon"
+      },
+      {
+        "day": 2,
+        "title": "Lisbon Party Day",
+        "description": "Beach club, sunset drinks, and Lisbon's legendary nightlife.",
+        "activities": ["Beach Club", "Sunset Cruise", "VIP Club Night", "Street Food Tour"],
+        "meals": ["Breakfast"],
+        "accommodation": "Boutique Hotel Lisbon"
+      },
+      {
+        "day": 3,
+        "title": "Adventure Day",
+        "description": "Adrenaline activities and recovery time before tonight's party.",
+        "activities": ["Go-Karting", "Paintball", "Group Dinner", "Casino Night"],
+        "meals": ["Breakfast", "Dinner"],
+        "accommodation": "Boutique Hotel Lisbon"
+      },
+      {
+        "day": 4,
+        "title": "Flight to Ibiza",
+        "description": "Head to the party capital! Pool party to kick things off.",
+        "activities": ["Flight to Ibiza", "Villa Check-in", "Pool Party", "Beach Dinner"],
+        "meals": ["Breakfast", "Dinner"],
+        "accommodation": "Private Villa Ibiza"
+      },
+      {
+        "day": 5,
+        "title": "Ibiza Beach Clubs",
+        "description": "Ultimate beach club experience at the world's best venues.",
+        "activities": ["Café del Mar", "Nikki Beach", "Sunset Strip", "Ushuaïa"],
+        "meals": ["Breakfast"],
+        "accommodation": "Private Villa Ibiza"
+      },
+      {
+        "day": 6,
+        "title": "Boat Party",
+        "description": "Private boat charter and legendary Ibiza super clubs.",
+        "activities": ["Private Boat Party", "Water Sports", "Beach BBQ", "Pacha Nightclub VIP"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Private Villa Ibiza"
+      },
+      {
+        "day": 7,
+        "title": "Departure",
+        "description": "Recovery breakfast, final memories, departures.",
+        "activities": ["Late Breakfast", "Pool Time", "Airport Transfer"],
+        "meals": ["Breakfast"],
+        "accommodation": null
+      }
+    ],
+    "availableDates": ["2025-05-15", "2025-06-05", "2025-07-10", "2025-08-15", "2025-09-12"],
+    "rating": 4.9,
+    "reviewCount": 156
+  },
+  {
+    "id": "5",
+    "title": "Family Alps Adventure",
+    "slug": "family-alps-adventure",
+    "description": "Perfect family adventure in the Swiss Alps! Kid-friendly hiking, mountain activities, and cozy alpine villages. Create magical memories in stunning scenery.",
+    "summary": "8-day family tour in Switzerland",
+    "type": "tour",
+    "region": "europe",
+    "style": ["family"],
+    "duration": 8,
+    "price": 2299,
+    "images": [
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Swiss Alps",
+    "countries": ["Switzerland"],
+    "featured": true,
+    "groupSize": {
+      "min": 4,
+      "max": 24
+    },
+    "amenities": ["Kid-Friendly Guides", "Family Rooms", "Childcare Available", "Age-Appropriate Activities"],
+    "inclusions": ["Family Hotels", "Most Meals", "Activities", "Cable Cars", "Train Passes"],
+    "exclusions": ["Flights", "Some Meals", "Optional Activities", "Travel Insurance"],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival Zurich",
+        "description": "Welcome to Switzerland! Train to Lucerne.",
+        "activities": ["Airport Arrival", "Train to Lucerne", "City Walk", "Welcome Dinner"],
+        "meals": ["Dinner"],
+        "accommodation": "Family Hotel Lucerne"
+      },
+      {
+        "day": 2,
+        "title": "Mount Pilatus",
+        "description": "Cable car adventure up Mount Pilatus, family-friendly hiking.",
+        "activities": ["Cable Car", "Easy Hiking Trails", "Playground", "Toboggan Run"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Family Hotel Lucerne"
+      },
+      {
+        "day": 3,
+        "title": "Interlaken",
+        "description": "Travel to Interlaken, explore the adventure capital.",
+        "activities": ["Train Journey", "Adventure Park", "Lake Cruise", "Town Exploration"],
+        "meals": ["Breakfast", "Dinner"],
+        "accommodation": "Family Hotel Interlaken"
+      },
+      {
+        "day": 4,
+        "title": "Jungfraujoch",
+        "description": "Top of Europe experience! Train to Jungfraujoch.",
+        "activities": ["Mountain Train", "Ice Palace", "Snow Fun", "Alpine Sensation"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Family Hotel Interlaken"
+      },
+      {
+        "day": 5,
+        "title": "Grindelwald",
+        "description": "Move to mountain village, easy glacier hike.",
+        "activities": ["Village Transfer", "First Cliff Walk", "Mountain Cart", "Playground"],
+        "meals": ["Breakfast", "Dinner"],
+        "accommodation": "Mountain Chalet Grindelwald"
+      },
+      {
+        "day": 6,
+        "title": "Adventure Day",
+        "description": "Thrilling but safe activities for all ages.",
+        "activities": ["Rope Park", "Mountain Scooters", "Mini Golf", "Chocolate Making"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Mountain Chalet Grindelwald"
+      },
+      {
+        "day": 7,
+        "title": "Zermatt Day Trip",
+        "description": "Visit car-free Zermatt and see the Matterhorn.",
+        "activities": ["Train to Zermatt", "Matterhorn Viewing", "Village Walk", "Return to Interlaken"],
+        "meals": ["Breakfast"],
+        "accommodation": "Family Hotel Interlaken"
+      },
+      {
+        "day": 8,
+        "title": "Departure",
+        "description": "Farewell breakfast and return to Zurich.",
+        "activities": ["Train to Zurich", "Airport Transfer"],
+        "meals": ["Breakfast"],
+        "accommodation": null
+      }
+    ],
+    "availableDates": ["2025-06-15", "2025-07-01", "2025-07-20", "2025-08-05", "2025-08-20"],
+    "rating": 4.8,
+    "reviewCount": 224
+  },
+  {
+    "id": "6",
+    "title": "Thai Islands Cruise",
+    "slug": "thai-islands-cruise",
+    "description": "Discover Thailand's most beautiful islands on this tropical paradise cruise. Turquoise waters, white sand beaches, and amazing Thai hospitality.",
+    "summary": "5-night cruise from Bangkok to Phuket",
+    "type": "cruise",
+    "region": "asia",
+    "style": ["couples", "family", "mixed"],
+    "duration": 5,
+    "price": 999,
+    "images": [
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Thailand",
+    "countries": ["Thailand"],
+    "featured": false,
+    "groupSize": {
+      "min": 2,
+      "max": 800
+    },
+    "amenities": ["Pool", "Spa", "Water Sports", "Kids Activities"],
+    "inclusions": ["Accommodation", "All Meals", "Water Activities", "Entertainment"],
+    "exclusions": ["Flights", "Shore Excursions", "Alcoholic Drinks"],
+    "route": [
+      {
+        "location": "Bangkok",
+        "country": "Thailand",
+        "departureTime": "18:00",
+        "highlights": ["Grand Palace", "Wat Pho", "Floating Markets"]
+      },
+      {
+        "location": "Koh Samui",
+        "country": "Thailand",
+        "arrivalTime": "10:00",
+        "departureTime": "18:00",
+        "highlights": ["Chaweng Beach", "Big Buddha", "Fisherman's Village"]
+      },
+      {
+        "location": "Koh Phi Phi",
+        "country": "Thailand",
+        "arrivalTime": "08:00",
+        "departureTime": "17:00",
+        "highlights": ["Maya Bay", "Viking Cave", "Snorkeling"]
+      },
+      {
+        "location": "Krabi",
+        "country": "Thailand",
+        "arrivalTime": "09:00",
+        "departureTime": "18:00",
+        "highlights": ["Railay Beach", "Tiger Cave Temple", "Hot Springs"]
+      },
+      {
+        "location": "Phuket",
+        "country": "Thailand",
+        "arrivalTime": "08:00",
+        "departureTime": "",
+        "highlights": ["Patong Beach", "Old Town", "Big Buddha"]
+      }
+    ],
+    "shipInfo": {
+      "name": "MS Andaman Pearl",
+      "class": "Standard Plus",
+      "cabinTypes": ["Interior", "Ocean View", "Balcony"],
+      "dining": ["Main Restaurant", "Deck BBQ", "Asian Fusion", "Buffet"],
+      "entertainment": ["Thai Cultural Shows", "Live Music", "Pool Parties", "Movie Nights"],
+      "kidsClub": true,
+      "adultOnly": false
+    },
+    "availableDates": ["2025-01-10", "2025-02-14", "2025-03-15", "2025-11-01", "2025-12-15"],
+    "rating": 4.6,
+    "reviewCount": 412
+  },
+  {
+    "id": "7",
+    "title": "Bali Bachelorette Escape",
+    "slug": "bali-bachelorette-escape",
+    "description": "Ultimate girls' getaway in Bali! Luxury villas, beach clubs, spa days, yoga sessions, and unforgettable parties. The perfect celebration before the big day.",
+    "summary": "6-day bachelorette party in Bali",
+    "type": "tour",
+    "region": "asia",
+    "style": ["bachelorette"],
+    "duration": 6,
+    "price": 1399,
+    "images": [
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580748329089-9d9e69fa63d2?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Bali",
+    "countries": ["Indonesia"],
+    "featured": true,
+    "groupSize": {
+      "min": 6,
+      "max": 16
+    },
+    "amenities": ["Private Villa", "Beach Club Access", "Spa", "Private Chef", "Photography"],
+    "inclusions": ["Luxury Villa", "Some Meals", "Spa Sessions", "Activities", "Transfers"],
+    "exclusions": ["Flights", "Most Meals", "Drinks", "Optional Activities"],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Welcome",
+        "description": "Arrive in paradise! Villa welcome and sunset beach dinner.",
+        "activities": ["Airport Transfer", "Villa Check-in", "Pool Party", "Beach Dinner"],
+        "meals": ["Dinner"],
+        "accommodation": "Luxury Villa Seminyak"
+      },
+      {
+        "day": 2,
+        "title": "Beach Club & Spa",
+        "description": "Relax at Bali's best beach clubs and pamper session.",
+        "activities": ["Beach Club Day", "Group Spa Treatment", "Sunset Cocktails", "Fine Dining"],
+        "meals": ["Breakfast"],
+        "accommodation": "Luxury Villa Seminyak"
+      },
+      {
+        "day": 3,
+        "title": "Yoga & Culture",
+        "description": "Morning yoga, temple visit, traditional Balinese experiences.",
+        "activities": ["Beach Yoga", "Tanah Lot Temple", "Cooking Class", "Market Shopping"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Luxury Villa Seminyak"
+      },
+      {
+        "day": 4,
+        "title": "Ubud Adventure",
+        "description": "Rice terraces, swing photos, and jungle exploration.",
+        "activities": ["Tegalalang Rice Terraces", "Jungle Swing", "Waterfall Visit", "Shopping"],
+        "meals": ["Breakfast", "Lunch"],
+        "accommodation": "Luxury Villa Seminyak"
+      },
+      {
+        "day": 5,
+        "title": "Boat & Party Day",
+        "description": "Private boat to Nusa Penida, final big celebration.",
+        "activities": ["Private Boat Charter", "Snorkeling", "Beach BBQ", "Farewell Party"],
+        "meals": ["Breakfast", "Lunch", "Dinner"],
+        "accommodation": "Luxury Villa Seminyak"
+      },
+      {
+        "day": 6,
+        "title": "Departure",
+        "description": "Relaxed breakfast and farewells.",
+        "activities": ["Late Breakfast", "Pool Time", "Airport Transfer"],
+        "meals": ["Breakfast"],
+        "accommodation": null
+      }
+    ],
+    "availableDates": ["2025-03-10", "2025-04-15", "2025-05-20", "2025-09-10", "2025-10-15"],
+    "rating": 5.0,
+    "reviewCount": 93
+  },
+  {
+    "id": "8",
+    "title": "Japan & Korea Discovery Cruise",
+    "slug": "japan-korea-discovery-cruise",
+    "description": "Immerse yourself in East Asian culture on this incredible cruise. From Tokyo's neon lights to Seoul's palaces, experience the perfect blend of ancient traditions and modern innovation.",
+    "summary": "10-night cruise exploring Japan and South Korea",
+    "type": "cruise",
+    "region": "asia",
+    "style": ["couples", "solo", "mixed"],
+    "duration": 10,
+    "price": 2199,
+    "images": [
+      "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&auto=format&fit=crop"
+    ],
+    "destination": "Japan & Korea",
+    "countries": ["Japan", "South Korea"],
+    "featured": false,
+    "groupSize": {
+      "min": 2,
+      "max": 1500
+    },
+    "amenities": ["Asian Fusion Dining", "Onsen Spa", "Cultural Workshops", "Karaoke"],
+    "inclusions": ["Accommodation", "All Meals", "Cultural Activities", "Port Taxes"],
+    "exclusions": ["Flights", "Shore Excursions", "Specialty Dining", "Drinks"],
+    "route": [
+      {
+        "location": "Tokyo/Yokohama",
+        "country": "Japan",
+        "departureTime": "18:00",
+        "highlights": ["Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree"]
+      },
+      {
+        "location": "Shimizu/Mt. Fuji",
+        "country": "Japan",
+        "arrivalTime": "07:00",
+        "departureTime": "17:00",
+        "highlights": ["Mount Fuji Views", "Tea Plantations", "Miho Beach"]
+      },
+      {
+        "location": "Kyoto/Osaka",
+        "country": "Japan",
+        "arrivalTime": "08:00",
+        "departureTime": "19:00",
+        "highlights": ["Fushimi Inari", "Kinkaku-ji", "Osaka Castle"]
+      },
+      {
+        "location": "Hiroshima",
+        "country": "Japan",
+        "arrivalTime": "08:00",
+        "departureTime": "17:00",
+        "highlights": ["Peace Memorial", "Itsukushima Shrine", "Miyajima Island"]
+      },
+      {
+        "location": "Busan",
+        "country": "South Korea",
+        "arrivalTime": "09:00",
+        "departureTime": "18:00",
+        "highlights": ["Gamcheon Culture Village", "Haedong Temple", "Jagalchi Market"]
+      },
+      {
+        "location": "Seoul/Incheon",
+        "country": "South Korea",
+        "arrivalTime": "07:00",
+        "departureTime": "",
+        "highlights": ["Gyeongbokgung Palace", "N Seoul Tower", "Myeongdong"]
+      }
+    ],
+    "shipInfo": {
+      "name": "MS Pacific Explorer",
+      "class": "Premium Plus",
+      "cabinTypes": ["Inside", "Ocean View", "Balcony", "Mini Suite", "Grand Suite"],
+      "dining": ["Main Dining", "Teppanyaki", "Sushi Bar", "Korean BBQ", "Buffet"],
+      "entertainment": ["Cultural Performances", "Karaoke", "Casino", "Dance Club"],
+      "kidsClub": false,
+      "adultOnly": false
+    },
+    "availableDates": ["2025-04-10", "2025-05-05", "2025-09-15", "2025-10-20"],
+    "rating": 4.7,
+    "reviewCount": 167
+  }
+]

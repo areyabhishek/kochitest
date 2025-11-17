@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "name": "Sarah Johnson",
+    "location": "London, UK",
+    "rating": 5,
+    "comment": "Our Mediterranean cruise was absolutely perfect! The ship was beautiful, the food was amazing, and every port was a new adventure. VoyageVista made everything seamless from booking to disembarkation. Highly recommend!",
+    "tripId": "1",
+    "image": "https://i.pravatar.cc/150?img=1",
+    "date": "2024-08-15"
+  },
+  {
+    "id": "2",
+    "name": "Michael Chen",
+    "location": "San Francisco, USA",
+    "rating": 5,
+    "comment": "Thailand was a dream come true! The tour was well-organized, our guide was knowledgeable and friendly, and we got to experience both the cultural sites and beautiful beaches. Best family vacation ever!",
+    "tripId": "2",
+    "image": "https://i.pravatar.cc/150?img=12",
+    "date": "2024-09-22"
+  },
+  {
+    "id": "3",
+    "name": "Emma Schmidt",
+    "location": "Berlin, Germany",
+    "rating": 5,
+    "comment": "The Baltic cruise exceeded all expectations! We visited so many incredible cities, each with its own charm. The shore excursions were well-planned, and having two days in St. Petersburg was a highlight. Will definitely book with VoyageVista again!",
+    "tripId": "3",
+    "image": "https://i.pravatar.cc/150?img=5",
+    "date": "2024-07-10"
+  },
+  {
+    "id": "4",
+    "name": "David Martinez",
+    "location": "Madrid, Spain",
+    "rating": 5,
+    "comment": "Epic bachelor party! Lisbon and Ibiza were the perfect combo. VIP club access, amazing villa in Ibiza, and the boat party was legendary. The VoyageVista team thought of everything. Best week of our lives!",
+    "tripId": "4",
+    "image": "https://i.pravatar.cc/150?img=15",
+    "date": "2024-06-18"
+  },
+  {
+    "id": "5",
+    "name": "Lisa Anderson",
+    "location": "Toronto, Canada",
+    "rating": 5,
+    "comment": "Our family had an incredible time in the Swiss Alps! Everything was perfectly tailored for kids - the activities were exciting but safe, and the hotels were family-friendly. Our kids still talk about the cable cars and the chocolate making workshop!",
+    "tripId": "5",
+    "image": "https://i.pravatar.cc/150?img=9",
+    "date": "2024-07-28"
+  },
+  {
+    "id": "6",
+    "name": "James Wilson",
+    "location": "Sydney, Australia",
+    "rating": 4,
+    "comment": "Great value cruise around Thai islands. The ship was comfortable, food was good with lots of variety, and the island stops were beautiful. Would have liked more time at Phi Phi, but overall a wonderful experience!",
+    "tripId": "6",
+    "image": "https://i.pravatar.cc/150?img=13",
+    "date": "2024-02-14"
+  },
+  {
+    "id": "7",
+    "name": "Rachel Thompson",
+    "location": "New York, USA",
+    "rating": 5,
+    "comment": "BEST bachelorette party ever! Bali was magical - our villa was stunning, the beach clubs were amazing, and the spa day was so relaxing. VoyageVista organized everything perfectly. The bride loved every minute!",
+    "tripId": "7",
+    "image": "https://i.pravatar.cc/150?img=10",
+    "date": "2024-04-20"
+  },
+  {
+    "id": "8",
+    "name": "Robert Kim",
+    "location": "Los Angeles, USA",
+    "rating": 5,
+    "comment": "Japan and Korea cruise was phenomenal! Such rich culture and history at every port. The onboard Japanese and Korean restaurants were authentic and delicious. The cultural workshops were a great touch. Exceeded all expectations!",
+    "tripId": "8",
+    "image": "https://i.pravatar.cc/150?img=14",
+    "date": "2024-05-12"
+  },
+  {
+    "id": "9",
+    "name": "Sophie Dubois",
+    "location": "Paris, France",
+    "rating": 5,
+    "comment": "The Mediterranean cruise was romantic and relaxing. Perfect for couples! We loved the mix of history, culture, and beautiful coastlines. The ship's amenities were top-notch, and the entertainment was excellent every night.",
+    "tripId": "1",
+    "image": "https://i.pravatar.cc/150?img=16",
+    "date": "2024-09-05"
+  },
+  {
+    "id": "10",
+    "name": "Tom O'Brien",
+    "location": "Dublin, Ireland",
+    "rating": 5,
+    "comment": "Took my family to Thailand and it was worth every penny. The itinerary was perfect - not too rushed but we saw everything we wanted. The elephant sanctuary was ethical and amazing. Our kids learned so much about Thai culture!",
+    "tripId": "2",
+    "image": "https://i.pravatar.cc/150?img=11",
+    "date": "2024-11-03"
+  }
+]
